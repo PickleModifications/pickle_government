@@ -18,7 +18,7 @@ export function Navbar({headerImage, headerText, openIndex, subSelected, categor
     const links = categories.map((item, itemId) => <LinksGroup isSelected={(openIndex !== undefined) ? (openIndex == itemId) : false} categoryLink={item.categoryLink} subSelected={subSelected} linkId={itemId} opened={opened == itemId} setOpened={setOpened} {...item} key={item.label} />);
 
     return (
-        <nav className={classes.navbar} style={{height: "100%"}} >
+        <nav className={classes.navbar} style={{borderTopLeftRadius: 5, borderBottomLeftRadius: 5, height: "100%"}} >
             {
                 headerText || headerImage ? (
                     <div className={classes.header}>
@@ -70,7 +70,6 @@ export function LinksGroup({ linkId, isSelected, subSelected, setOpened, icon: I
                 <Text className={classes["link-text"]}>{link.label}</Text>
             </Group>
     ));
-    console.log(classes["control-selected"])
     return (
         <>
         <UnstyledButton onClick={() => {

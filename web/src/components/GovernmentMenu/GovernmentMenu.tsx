@@ -12,19 +12,14 @@ import {
     IconChevronRight
 } from '@tabler/icons-react';
 import { Utils } from "../../App";
+import { Home } from "./pages/home/Home";
+import { LegislativeBills } from "./pages/legislative/bills/LegislativeBills";
+import { LegislativeMembers } from './pages/legislative/members/LegislativeMembers';
 
 let [page, setPage] = ["home", (value: any) => {}];
 
 export function NavigateToPage(page: string) {
     setPage(page);
-}
-
-function Home() {
-    return(
-        <Center>
-            Balls
-        </Center>
-    )
 }
 
 export function GovernmentMenu({utils} : {utils: Utils}) {
@@ -36,16 +31,16 @@ export function GovernmentMenu({utils} : {utils: Utils}) {
         element = <Home/>
         openIndex = 0;
     } else if (page == "legislative_branch_bills") {
-        element = <Center>Bills</Center>
+        element = <LegislativeBills utils={utils} />
         openIndex = 1;
         subSelected = 0;
     } else if (page == "legislative_branch_members") {
-        element = <Center>Members</Center>
+        element = <LegislativeMembers/>
         openIndex = 1;
         subSelected = 1;
     }
     return(
-        <Group gap={0} align='flex-start' p={0} pos={"absolute"} top={"50%"} left={"50%"} style={{transform: "translate(-50%, -50%)"}} w={1000} h={600} bg={"dark.7"}>
+        <Group gap={0} align='flex-start' p={0} pos={"absolute"} top={"50%"} left={"50%"} style={{ borderRadius: 5, transform: "translate(-50%, -50%)"}} w={1000} h={600} bg={"dark.7"}>
             <Navbar headerText={utils.translate("government_title")} headerImage={"https://static.wikia.nocookie.net/gtawiki/images/b/be/LosSantosSeal-GTAV.png"} openIndex={openIndex}  subSelected={subSelected} categories={[
                 { label: 'Home', icon: IconAdjustments, categoryLink: "home" },
                 {
