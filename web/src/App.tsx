@@ -19,6 +19,7 @@ function App() {
     judicial_branch: 'Judicial Branch',
     legislative_branch_bills: 'Congressional Bills',
     legislative_branch_members: 'Representatives',
+    legislative_bill_title: "H.R. %s - %s",
     executive_branch_orders: 'Executive Orders',
     executive_branch_budget: 'State Budget',
     executive_branch_members: 'Cabinet Members',
